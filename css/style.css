@@ -100,3 +100,21 @@ footer{
   color: #f15b31;
   font-weight: 700;
 }
+
+#reset-btn{
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 9px;
+}
+
+#reset-btn:hover{
+  cursor: pointer;
+}
+
+#results{
+  font-weight: 800;
+  font-size: 30px;
+}
