@@ -1,7 +1,27 @@
 // different cards in stack
-const cards = ['queen', 'queen', 'king', 'king'];
+const cards = [
+  {
+    rank: 'queen',
+    suit: 'hearts',
+    cardImage: 'images/queen-of-hearts.png'
+  },
+  {
+    rank: 'queen',
+    suit: 'diamonds',
+    cardImage: 'images/queen-of-diamonds.png'
+  },
+  {
+    rank: 'king',
+    suit: 'hearts',
+    cardImage: 'images/king-of-hearts.png'
+  },
+  {
+    rank: 'queen',
+    suit: 'diamonds',
+    cardImage: 'images/king-of-diamonds.png'
+  }
+];
 
-// cards in play
 let cardsInPlay = [];
 
 const checkForMatch = () => {
@@ -16,21 +36,16 @@ const checkForMatch = () => {
 const flipCard = (cardId) => {
 
   let cardFlipped = cards[cardId];
-  console.log(`User flipped ${cardFlipped}`);
+  let {rank, suit, cardImage} = cardFlipped;
+
+  console.log(`User flipped ${rank}`);
+  console.log(`User flipped ${suit}`);
+  console.log(`User flipped ${cardImage}`);
 
   // add the flipped card to cardsInPlay array
   cardsInPlay.push(cardFlipped);
   console.log(cardsInPlay);
-  // check if 2 cards have been played
-  // if (cardsInPlay.length === 2){
-  //   console.log('2 cards have been played');
-  //   if (cardsInPlay[0] === cardsInPlay[1]){
-  //     alert("You found a match!");
-  //   }
-  //   else{
-  //     alert("Sorry, try again.");
-  //   }
-  // }
+
 }
 
 flipCard(0);
