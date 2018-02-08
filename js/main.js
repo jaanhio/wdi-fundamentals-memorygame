@@ -1,29 +1,38 @@
 // different cards in stack
-var cards = ['queen', 'queen', 'king', 'king'];
+const cards = ['queen', 'queen', 'king', 'king'];
 
 // cards in play
-var cardsInPlay = [];
+let cardsInPlay = [];
 
-// first card user flipped
-var cardOne = cards[0];
-console.log(`user flipped ${cardOne}`);
-
-var cardTwo = cards[1];
-console.log(`user flipped ${cardTwo}`);
-
-cardsInPlay.push(cardOne);
-cardsInPlay.push(cardTwo);
-console.log(cardsInPlay);
-
-// check if 2 cards have been played
-if(cardsInPlay.length === 2){
-  console.log("2 cards have been played");
-  if(cardsInPlay[0] === cardsInPlay[1]){
-    alert("You found a match!");
+const checkForMatch = () => {
+  if (cardsInPlay[0] === cardsInPlay[1]){
+    console.log("You found a match!");
   }
-  else{
-    alert("Sorry, try again.");
+  else {
+    console.log("Sorry, try again");
   }
 }
 
-// check for equality between 2 cards in cardsInPlay array
+const flipCard = (cardId) => {
+
+  let cardFlipped = cards[cardId];
+  console.log(`User flipped ${cardFlipped}`);
+
+  // add the flipped card to cardsInPlay array
+  cardsInPlay.push(cardFlipped);
+  console.log(cardsInPlay);
+  // check if 2 cards have been played
+  // if (cardsInPlay.length === 2){
+  //   console.log('2 cards have been played');
+  //   if (cardsInPlay[0] === cardsInPlay[1]){
+  //     alert("You found a match!");
+  //   }
+  //   else{
+  //     alert("Sorry, try again.");
+  //   }
+  // }
+}
+
+flipCard(0);
+flipCard(1);
+checkForMatch();
